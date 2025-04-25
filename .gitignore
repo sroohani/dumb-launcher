@@ -32,4 +32,4 @@ go.work.sum
 !.env.example
 
 # local developer files
-.dev
+.dev/
