@@ -13,6 +13,8 @@ func Load(dbUrl string) {
 		log.Fatalf("Error opening the database: %v", err)
 	}
 
+	db.AutoMigrate(&AppGroup{})
+
 	sqlDb, err := db.DB()
 	if err != nil {
 		log.Fatalf("Error accessing the database object: %v", err)
