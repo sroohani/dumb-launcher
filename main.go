@@ -1,7 +1,9 @@
 package main
 
-import "fmt"
+import (
+	"github.com/sroohani/dumb-launcher/tui"
+)
 
 func main() {
-	fmt.Printf("Welcome to %v %v!\n", displayName, versionString)
+	tui.Launch(displayName, versionString)
 }
