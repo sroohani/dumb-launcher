@@ -10,6 +10,15 @@ func (m model) Update(msg tea.Msg) (tea.Model, tea.Cmd) {
 		switch msg.String() {
 		case "ctrl+c", "q":
 			return m, tea.Quit
+
+		case "ctrl+a":
+			m.uiCmd = uiCmdAdd
+
+		case "ctrl+d":
+			m.uiCmd = uiCmdDelete
+
+		case "ctrl+e":
+			m.uiCmd = uiCmdEdit
 		}
 
 	case tea.WindowSizeMsg:

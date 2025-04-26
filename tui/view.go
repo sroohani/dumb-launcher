@@ -31,7 +31,18 @@ func (m model) View() string {
 		Foreground(lipgloss.Color(m.colorPalette.ContentFg)).
 		Width(m.width).
 		Height(m.height - 3)
-	content := contentStyle.Render("Future list of apps and groups will appear here")
+	content := "Future list of apps and groups will appear here... "
+	switch m.uiCmd {
+	case uiCmdAdd:
+		content += "Add"
+
+	case uiCmdDelete:
+		content += "Delete"
+
+	case uiCmdEdit:
+		content += "Edit"
+	}
+	content = contentStyle.Render(content)
 
 	cmdBarStyle := lipgloss.NewStyle().
 		Background(lipgloss.Color(m.colorPalette.CmdBarBg)).
