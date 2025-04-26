@@ -15,6 +15,8 @@ type launchable struct {
 type model struct {
 	displayName   string
 	versionString string
+	width         int
+	height        int
 	launchables   []launchable
 	cursor        string
 }
