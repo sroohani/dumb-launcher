@@ -19,12 +19,14 @@ type model struct {
 	height        int
 	launchables   []launchable
 	cursor        string
+	colorPalette  *ColorPalette
 }
 
 func initialModel(displayName string, versionString string) model {
 	return model{
 		displayName:   displayName,
 		versionString: versionString,
+		colorPalette:  DefaultColorPalette(),
 	}
 }
 
