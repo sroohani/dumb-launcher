@@ -12,6 +12,15 @@ type launchable struct {
 	children  []launchable
 }
 
+type userInterfaceCommand = int
+
+const (
+	uiCmdAdd userInterfaceCommand = iota
+	uiCmdDelete
+	uiCmdEdit
+	uiCmdNone
+)
+
 type model struct {
 	displayName   string
 	versionString string
@@ -20,6 +29,7 @@ type model struct {
 	launchables   []launchable
 	cursor        string
 	colorPalette  *ColorPalette
+	uiCmd         userInterfaceCommand
 }
 
 func initialModel(displayName string, versionString string) model {
@@ -27,6 +37,7 @@ func initialModel(displayName string, versionString string) model {
 		displayName:   displayName,
 		versionString: versionString,
 		colorPalette:  DefaultColorPalette(),
+		uiCmd:         uiCmdNone,
 	}
 }
 
